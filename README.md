@@ -1,0 +1,1 @@
+Fronty do aplikacji pozwalającej sprawdzić dostępność piłkarzyków w firmie

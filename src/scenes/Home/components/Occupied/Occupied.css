@@ -1,0 +1,8 @@
+.occupied {
+    height: 500px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #da291c  ;
+}

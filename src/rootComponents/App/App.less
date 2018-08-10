@@ -9,6 +9,16 @@ body {
   background: #fff url("./assets/stefan-steinbauer-453634-unsplash.jpg") no-repeat;
   background-size: cover;
   z-index: -1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+  }
 }
 
 

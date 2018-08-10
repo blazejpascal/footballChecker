@@ -4,9 +4,12 @@ body {
   font-family: sans-serif;
 }
 
-
 .App {
   text-align: center;
+  background: #fff url("./assets/stefan-steinbauer-453634-unsplash.jpg") no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
+
 
 

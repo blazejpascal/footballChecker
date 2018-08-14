@@ -12,6 +12,16 @@ const updateStatus = gql`
 }
 `
 
+const TRIAL_NAME = gql`
+    {
+        status {
+            isAvailable,
+            endTime
+        }
+    }
+
+`
+
 class Countdown extends React.Component {
     constructor(props) {
         super(props);
@@ -39,7 +49,15 @@ class Countdown extends React.Component {
 
         // clear countdown when date is reached
         if (diff <= 0) {
-            this.props.mutate()
+            this.props.mutate({
+                update: (cache, mutationResults) => {
+                    cache.writeQuery({
+                        query: TRIAL_NAME,
+                        data: {status: mutationResults.data.updateStatus}
+                    })
+                }
+            })
+
             return false;
         }
 

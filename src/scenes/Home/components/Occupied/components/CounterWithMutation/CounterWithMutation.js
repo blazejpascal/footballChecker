@@ -1,5 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import { graphql } from  'react-apollo'
+import gql from 'graphql-tag'
+
+const updateStatus = gql`
+    mutation updateStatus {
+        updateStatus {
+            isAvailable,
+            endTime
+      }
+}
+`
 
 class Countdown extends React.Component {
     constructor(props) {
@@ -27,7 +38,10 @@ class Countdown extends React.Component {
         let diff = (Date.parse(new Date(endDate)) - Date.parse(new Date())) / 1000;
 
         // clear countdown when date is reached
-        if (diff <= 0) return false;
+        if (diff <= 0) {
+            this.props.mutate()
+            return false;
+        }
 
         const timeLeft = {
             min: 0,
@@ -93,4 +107,6 @@ Countdown.defaultProps = {
     date: new Date()
 };
 
-export default Countdown;
+const CounterWithMutation = graphql(updateStatus)(Countdown)
+
+export default CounterWithMutation;

@@ -3,6 +3,7 @@ import {ApolloProvider} from 'react-apollo'
 import createApolloClient from '../../core/createApolloClient'
 import './App.less';
 import Home from '../../scenes/Home/Home'
+import TableBookingWithMutation from '../../scenes/TableBookingWithMutation/TableBookingWithMutation'
 
 const client = createApolloClient()
 
@@ -17,6 +18,7 @@ class App extends Component {
             </header>
 
               <Home />
+              {/*<TableBookingWithMutation />*/}
             </div>
           </div>
       </ApolloProvider>

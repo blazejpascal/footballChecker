@@ -1,7 +1,6 @@
 import { ApolloClient, InMemoryCache } from 'apollo-boost'
 import { HttpLink } from 'apollo-link-http'
 
-
 export default function createApolloClient() {
     const apolloCache = new InMemoryCache()
     return new ApolloClient({

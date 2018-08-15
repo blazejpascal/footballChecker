@@ -1,5 +1,5 @@
 import React from 'react'
-import './Available.css'
+import './Available.less'
 
 const message  = 'Wolne!'
 const invitation = 'Zapraszamy'

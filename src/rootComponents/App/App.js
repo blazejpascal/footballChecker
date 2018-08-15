@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {ApolloProvider} from 'react-apollo'
 import createApolloClient from '../../core/createApolloClient'
+import {BrowserRouter as Router,
+        Route} from 'react-router-dom';
 import './App.less';
 import Home from '../../scenes/Home/Home'
 import TableBookingWithMutation from '../../scenes/TableBookingWithMutation/TableBookingWithMutation'
@@ -11,16 +13,12 @@ class App extends Component {
   render() {
     return (
       <ApolloProvider client={client} >
-          <div className="App">
-            <div className='App__container App__darken-pseudo'>
-            <header className="App-header">
-                <h1 className="App-title">Welcome to Table Football in Avra</h1>
-            </header>
-
-              <Home />
-              {/*<TableBookingWithMutation />*/}
+          <Router>
+             <div className="App">
+                 <Route exact path="/" component={Home} />
+                 <Route path="/test" component={TableBookingWithMutation} />
             </div>
-          </div>
+          </Router>
       </ApolloProvider>
     );
   }

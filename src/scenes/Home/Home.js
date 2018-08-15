@@ -4,6 +4,7 @@ import gql from 'graphql-tag'
 import './Home.less'
 import Available from './components/Available/Available'
 import Occupied from './components/Occupied/Occupied'
+import Layout from '../../rootComponents/Layout/Layout'
 
 class Home extends React.Component {
     render() {
@@ -27,6 +28,7 @@ class Home extends React.Component {
                     }
 
                     return (
+                    <Layout>
                         <div className="home">
                             {data.status.isAvailable ?
                                 (<Available cssClass="card" />)
@@ -34,6 +36,7 @@ class Home extends React.Component {
                                 (<Occupied cssClass="card" date={data.status.endTime} />)
                             }
                         </div>
+                    </Layout>
                     )
                 }}
             </Query>

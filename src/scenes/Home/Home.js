@@ -5,6 +5,7 @@ import './Home.less'
 import Available from './components/Available/Available'
 import Occupied from './components/Occupied/Occupied'
 import Layout from '../../rootComponents/Layout/Layout'
+import Loader from '../../sharedComponents/Loader/Loader'
 
 class Home extends React.Component {
     render() {
@@ -21,7 +22,7 @@ class Home extends React.Component {
                 `}
                 >
                 {({ loading, error, data }) => {
-                    if (loading) return <p>Loading...</p>;
+                    if (loading) return <Loader />;
                     if (error) {
                         console.log(error);
                         return

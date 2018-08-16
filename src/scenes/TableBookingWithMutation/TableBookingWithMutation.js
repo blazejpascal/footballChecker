@@ -1,34 +1,18 @@
 import React from 'react';
-import { graphql } from  'react-apollo'
-import gql from 'graphql-tag'
 import moment from 'moment'
+import { graphql } from  'react-apollo'
+import {withRouter} from 'react-router-dom'
 
-const TRIAL_NAME= gql`
-    {
-        status {
-            isAvailable,
-            endTime
-        }
-    }
+import DEFAULT_QUERY from '../../consts/query'
+import {setStatus} from "../../consts/mutations";
 
-`
-
-const setStatus = gql`
-    mutation setStatus($status: StatusInput!) {
-    setStatus(status: $status) {
-    isAvailable,
-    endTime
-  }
-}
-`
 
 class TableBooking extends React.Component {
     constructor(props) {
         super(props)
     }
     componentDidMount() {
-        let endTimeCounter = moment().add(2, 'minutes').format('YYYY-MM-DD H:mm')
-        console.log(endTimeCounter)
+        let endTimeCounter = moment().add(2, 'minutes').format('YYYY-MM-DD HH:mm')
         this.props.mutate({
             variables: {
                 status: {
@@ -36,13 +20,13 @@ class TableBooking extends React.Component {
                 }
             },
             update: (cache, mutationResults) => {
-                console.log(mutationResults)
                 cache.writeQuery({
-                    query: TRIAL_NAME,
+                    query: DEFAULT_QUERY,
                     data: { status: mutationResults.data.setStatus}
                 })
             }
         })
+        this.props.history.push('/')
     }
 
     render() {
@@ -54,5 +38,5 @@ class TableBooking extends React.Component {
 }
 
 const TableBookingWithMutation = graphql(setStatus)(TableBooking)
-export default TableBookingWithMutation
+export default withRouter(TableBookingWithMutation)
 

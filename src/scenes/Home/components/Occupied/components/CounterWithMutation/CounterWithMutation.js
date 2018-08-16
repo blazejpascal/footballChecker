@@ -1,26 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { graphql } from  'react-apollo'
-import gql from 'graphql-tag'
+import DEFAULT_QUERY from '../../../../../../consts/query'
+import { upgradeStatus} from "../../../../../../consts/mutations";
 
-const updateStatus = gql`
-    mutation updateStatus {
-        updateStatus {
-            isAvailable,
-            endTime
-      }
-}
-`
-
-const TRIAL_NAME = gql`
-    {
-        status {
-            isAvailable,
-            endTime
-        }
-    }
-
-`
 
 class Countdown extends React.Component {
     constructor(props) {
@@ -52,7 +35,7 @@ class Countdown extends React.Component {
             this.props.mutate({
                 update: (cache, mutationResults) => {
                     cache.writeQuery({
-                        query: TRIAL_NAME,
+                        query: DEFAULT_QUERY,
                         data: {status: mutationResults.data.updateStatus}
                     })
                 }
@@ -125,6 +108,6 @@ Countdown.defaultProps = {
     date: new Date()
 };
 
-const CounterWithMutation = graphql(updateStatus)(Countdown)
+const CounterWithMutation = graphql(upgradeStatus)(Countdown)
 
 export default CounterWithMutation;

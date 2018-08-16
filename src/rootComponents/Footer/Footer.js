@@ -4,7 +4,7 @@ import './Footer.less'
 const Footer = () => {
     return(
         <div className='footer'>
-            <span> W&W company in Avra </span>
+            <span> W&W team in Avra </span>
         </div>
     )
 }

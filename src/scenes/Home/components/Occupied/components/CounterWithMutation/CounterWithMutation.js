@@ -4,6 +4,8 @@ import { graphql } from  'react-apollo'
 import DEFAULT_QUERY from '../../../../../../consts/query'
 import { upgradeStatus} from "../../../../../../consts/mutations";
 
+import './CounterWithMutation.less'
+
 
 class Countdown extends React.Component {
     constructor(props) {
@@ -80,21 +82,16 @@ class Countdown extends React.Component {
         const countDown = this.state;
 
         return (
-            <div className="Countdown">
-
-                <span className="Countdown-col">
-          <span className="Countdown-col-element">
-            <strong>{this.addLeadingZeros(countDown.min)}</strong>
-            <span>Min</span>
-          </span>
-        </span>
-
-                <span className="Countdown-col">
-          <span className="Countdown-col-element">
-            <strong>{this.addLeadingZeros(countDown.sec)}</strong>
-            <span>Sec</span>
-          </span>
-        </span>
+            <div className={`countdown ${this.props.cssClass}`}>
+                <span className="countdown__min">
+                    {this.addLeadingZeros(countDown.min)}
+                </span>
+                <span className="countdown__separator">
+                    :
+                </span>
+                <span className="countdown__sec">
+                  {this.addLeadingZeros(countDown.sec)}
+                </span>
             </div>
         );
     }

@@ -1,6 +1,23 @@
+@keyframes spinning {
+    from {
+        transform: rotate3d(0,1,0,0);
+    }
+    to {
+        transform: rotate3d(0,1,0,360deg);
+    }
+}
+
 .card {
-    position: relative;
+    width:18em;
+    height: 30em;
     z-index: 1;
+    animation-name: spinning;
+    animation-duration: 1s;
+
+    @media only screen and (min-width : 768px) {
+        width:24em;
+        height: 34em;
+    }
 }
 
 .home {

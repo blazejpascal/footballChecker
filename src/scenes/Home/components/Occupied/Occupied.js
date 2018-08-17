@@ -7,7 +7,7 @@ const message  = 'Zajęte'
 const Occupied = props => (
     <div className={`occupied  ${props.cssClass}`} onClick={props.onClick}>
         <div className='occupied__title'> {message} </div>
-        <CounterWithMutation date={props.date}/>
+        <CounterWithMutation date={props.date} cssClass='occupied__counter'/>
     </div>
 )
 

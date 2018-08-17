@@ -1,7 +1,35 @@
 .occupied {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: space-evenly;
-   background-color: #da291c;
+   display: grid;
+   grid-template-rows: 68% 8% 22%;
+   background: url(../../assets/fist.svg) no-repeat center;
+   background-size: cover ;
+
+   @keyframes titleAnimation {
+      0%   {color:#ff6741; font-size: 3em}
+      50%  {color:#ff6741; font-size: 3.50em}
+      100% {color:#ff6741; font-size: 3em}
+   }
+
+   &__title {
+      color: #ff6741;
+      font-size: 2em;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      place-self: center;
+      animation-name: titleAnimation;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      padding-left: 8px;
+
+      @media only screen and (min-width : 768px) {
+         font-size: 3em;
+      }
+   }
+
+   &__counter {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      place-self: center;
+   }
 }
+

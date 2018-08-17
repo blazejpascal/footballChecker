@@ -1,18 +1,40 @@
 .available {
-    width: auto;
-    height: auto;
+    display: grid;
+    grid-template-rows: 67% 33%;
+    background: url(../../assets/fist-available.svg) no-repeat center ;
+    background-size: cover ;
 
-    &__bg {
-        background: url(../../assets/upgraded.svg) no-repeat center ;
-        background-size: cover ;
-        width:30em;
-        height: 40em;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        padding: 0;
+    @keyframes titleAnimation2 {
+        0%   {color:#ffff99; font-size: 2.5em}
+        50%  {color:#ffff99; font-size: 3em}
+        100% {color:#ffff99; font-size: 2.5em}
+
+    }
+    &__title {
+        color: #ffff99;
+        font-size: 2em;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        place-self: center;
+        padding-left: 10px;
+
+        animation-name: titleAnimation2;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+
+        @media only screen and (min-width : 768px) {
+            @keyframes titleAnimation3 {
+                0%   {color:#ffff99; font-size: 3em}
+                50%  {color:#ffff99; font-size: 3.50em}
+                100% {color:#ffff99; font-size: 3em}
+
+            }
+            font-size: 3em;
+            animation-name: titleAnimation3;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
 
 
+        }
     }
 }

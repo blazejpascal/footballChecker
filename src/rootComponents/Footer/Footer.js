@@ -5,6 +5,9 @@ const Footer = () => {
     return(
         <div className='footer'>
             <span> W&W team in Avra </span>
+            <div>
+                <a href="https://www.vecteezy.com">Illustrations by Vecteezy!</a>
+            </div>
         </div>
     )
 }

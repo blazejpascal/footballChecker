@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Football Checker",
+  "name": "App enable to check are table football is available ",
   "icons": [
     {
       "src": "favicon.ico",

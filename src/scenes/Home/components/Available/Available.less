@@ -5,14 +5,15 @@
     background-size: cover ;
 
     @keyframes titleAnimation2 {
-        0%   {color:#ffff99; font-size: 2.5em}
-        50%  {color:#ffff99; font-size: 3em}
-        100% {color:#ffff99; font-size: 2.5em}
+        0%   {color:#ffff99; font-size: 2.25em}
+        50%  {color:#ffff99; font-size: 2.75em}
+        100% {color:#ffff99; font-size: 2.25em}
 
     }
     &__title {
+        font-family: 'Jura', sans-serif;
         color: #ffff99;
-        font-size: 2em;
+        font-size: 1.75em;
         grid-row-start: 1;
         grid-row-end: 2;
         place-self: center;
@@ -33,8 +34,6 @@
             animation-name: titleAnimation3;
             animation-duration: 2s;
             animation-iteration-count: infinite;
-
-
         }
     }
 }

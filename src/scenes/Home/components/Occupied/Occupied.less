@@ -5,12 +5,13 @@
    background-size: cover ;
 
    @keyframes titleAnimation {
-      0%   {color:#ff6741; font-size: 3em}
-      50%  {color:#ff6741; font-size: 3.50em}
-      100% {color:#ff6741; font-size: 3em}
+      0%   {color:#ff6741; font-size: 2.25em}
+      50%  {color:#ff6741; font-size: 2.75em}
+      100% {color:#ff6741; font-size: 2.25em}
    }
 
    &__title {
+      font-family: 'Jura', sans-serif;
       color: #ff6741;
       font-size: 2em;
       grid-row-start: 1;
@@ -22,7 +23,15 @@
       padding-left: 8px;
 
       @media only screen and (min-width : 768px) {
-         font-size: 3em;
+            @keyframes titleAnimation3 {
+               0%   {color:#ffff99; font-size: 3em}
+               50%  {color:#ffff99; font-size: 3.50em}
+               100% {color:#ffff99; font-size: 3em}
+            }
+            font-size: 3em;
+            animation-name: titleAnimation3;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
       }
    }
 
@@ -30,6 +39,10 @@
       grid-row-start: 3;
       grid-row-end: 4;
       place-self: center;
+      padding-top: 5%;
+      @media only screen and (min-width : 768px) {
+         padding-top: 0;
+      }
    }
 }
 

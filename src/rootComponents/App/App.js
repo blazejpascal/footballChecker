@@ -16,7 +16,7 @@ class App extends Component {
           <Router>
              <div className="App">
                  <Route exact path="/" component={Home} />
-                 <Route path="/test" component={TableBookingWithMutation} />
+                 <Route path="/tableBooking" component={TableBookingWithMutation} />
             </div>
           </Router>
       </ApolloProvider>

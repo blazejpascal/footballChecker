@@ -12,7 +12,7 @@ class TableBooking extends React.Component {
         super(props)
     }
     componentDidMount() {
-        let endTimeCounter = moment().add(2, 'minutes').format('YYYY-MM-DD HH:mm')
+        let endTimeCounter = moment().add(20, 'minutes').format('YYYY-MM-DD HH:mm')
         this.props.mutate({
             variables: {
                 status: {

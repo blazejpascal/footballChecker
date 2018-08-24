@@ -8,9 +8,7 @@ import {setStatus} from "../../consts/mutations";
 
 
 class TableBooking extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+
     componentDidMount() {
         let endTimeCounter = moment().add(20, 'minutes').format('YYYY-MM-DD HH:mm')
         this.props.mutate({

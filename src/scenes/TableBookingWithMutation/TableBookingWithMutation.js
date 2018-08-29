@@ -10,14 +10,18 @@ import {setStatus} from "../../consts/mutations";
 class TableBooking extends React.Component {
 
     componentDidMount() {
-        let endTimeCounter = moment().add(20, 'minutes').format('YYYY-MM-DD HH:mm')
+        let endTimeCounter = moment().add(2, 'minutes').format('YYYY-MM-DD HH:mm')
         this.props.mutate({
             variables: {
                 status: {
                 endTime: endTimeCounter
                 }
             },
+
             update: (cache, mutationResults) => {
+                const token = mutationResults.data.setStatus.resetToken
+                localStorage.setItem('jwtToken', token)
+                console.log(mutationResults)
                 cache.writeQuery({
                     query: DEFAULT_QUERY,
                     data: { status: mutationResults.data.setStatus}

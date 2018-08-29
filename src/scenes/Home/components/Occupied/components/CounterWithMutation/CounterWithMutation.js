@@ -36,7 +36,6 @@ class Countdown extends React.Component {
         if (diff <= 0) {
             this.props.mutate({
                 update: (cache, mutationResults) => {
-                console.log(mutationResults)
                     cache.writeQuery({
                         query: DEFAULT_QUERY,
                         data: {status: mutationResults.data.updateStatus}

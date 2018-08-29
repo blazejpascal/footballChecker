@@ -18,3 +18,12 @@ export const setStatus = gql`
       }
 }
 `
+
+export const RESET_STATUS = gql`
+   mutation resetStatus {
+     resetStatus {
+       isAvailable,
+       endTime
+     }
+   }
+`

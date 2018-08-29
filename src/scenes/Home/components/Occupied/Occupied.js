@@ -1,6 +1,7 @@
 import React from 'react'
 import './Occupied.less'
 import CounterWithMutation from './components/CounterWithMutation/CounterWithMutation'
+import MessageWithMutation from './components/MessageWithMutation/MessageWithMutation'
 
 const messageOcc  = 'Zajęte'
 const pressToFinish= 'Nacisnij by zakończyć'
@@ -14,7 +15,7 @@ constructor(props) {
      return(
         <div className={`occupied  ${this.props.cssClass}`}>
             {this.state.token ?
-                <div className='occupied__title occupied__title--smaller'> {pressToFinish} </div>
+                <MessageWithMutation cssClass='occupied__title occupied__title--smaller' message={pressToFinish} />
                 :
                 <div className='occupied__title'> {messageOcc} </div>
             }

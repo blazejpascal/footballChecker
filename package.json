@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "apollo-boost": "^0.1.13",
+    "apollo-cache-inmemory": "^1.2.9",
+    "apollo-client": "^2.4.1",
+    "apollo-link-context": "^1.0.8",
     "apollo-link-http": "^1.5.4",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",

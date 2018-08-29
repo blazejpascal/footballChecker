@@ -27,6 +27,7 @@ class Countdown extends React.Component {
 
     componentWillUnmount() {
         this.stop();
+        this.removeFromLocal();
     }
 
     calculateCountdown(endDate) {
@@ -76,6 +77,10 @@ class Countdown extends React.Component {
             value = '0' + value;
         }
         return value;
+    }
+
+    removeFromLocal() {
+        localStorage.removeItem('jwtToken')
     }
 
     render() {

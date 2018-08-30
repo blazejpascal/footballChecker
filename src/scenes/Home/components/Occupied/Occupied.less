@@ -37,7 +37,33 @@
       }
 
       &--smaller {
-        font-size: 1.5em;
+         width: 45%;
+
+         @keyframes titleAnimation--message-small {
+            0%   {color:#ff6741; font-size: 1.25em}
+            50%  {color:#ff6741; font-size: 1.5em}
+            100% {color:#ff6741; font-size: 1.25em}
+         }
+
+         font-size: 1.25em;
+         animation-name: titleAnimation--message-small;
+         animation-duration: 2s;
+         animation-iteration-count: infinite;
+
+
+         @media only screen and (min-width : 768px) {
+            @keyframes titleAnimation4 {
+               0%   {color:#ff6741; font-size: 1.75em}
+               50%  {color:#ff6741; font-size: 2em}
+               100% {color:#ff6741; font-size: 1.75em}
+            }
+
+            width: 55%;
+            font-size: 1.75em;
+            animation-name: titleAnimation4;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+         }
       }
    }
 

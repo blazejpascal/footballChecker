@@ -4,7 +4,7 @@ import CounterWithMutation from './components/CounterWithMutation/CounterWithMut
 import MessageWithMutation from './components/MessageWithMutation/MessageWithMutation'
 
 const messageOcc  = 'Zajęte'
-const pressToFinish= 'Nacisnij by zakończyć'
+const pressToFinish= 'Naciśnij by zakończyć'
 
 class Occupied extends React.Component {
 constructor(props) {

@@ -5,7 +5,7 @@ import { setContext } from 'apollo-link-context'
 
 export default function createApolloClient() {
     const apolloCache = new InMemoryCache()
-    const apolloLink = new HttpLink({uri: "http://localhost:3001/graphql"})
+    const apolloLink = new HttpLink({uri: "https://table-football-server.herokuapp.com/graphql"})
     const authLink = setContext((_,{ headers }) => {
         const token = localStorage.getItem('jwtToken')
         console.log(token)

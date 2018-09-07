@@ -21,7 +21,6 @@ class TableBooking extends React.Component {
             update: (cache, mutationResults) => {
                 const token = mutationResults.data.setStatus.resetToken
                 localStorage.setItem('jwtToken', token)
-                console.log(mutationResults)
                 cache.writeQuery({
                     query: DEFAULT_QUERY,
                     data: { status: mutationResults.data.setStatus}

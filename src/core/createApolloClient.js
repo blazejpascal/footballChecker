@@ -8,7 +8,6 @@ export default function createApolloClient() {
     const apolloLink = new HttpLink({uri: "https://table-football-server.herokuapp.com/graphql"})
     const authLink = setContext((_,{ headers }) => {
         const token = localStorage.getItem('jwtToken')
-        console.log(token)
         return {
             headers: {
                 ...headers,

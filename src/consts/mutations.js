@@ -11,9 +11,19 @@ export const upgradeStatus = gql`
 
 export const setStatus = gql`
     mutation setStatus($status: StatusInput!) {
-    setStatus(status: $status) {
-    isAvailable,
-    endTime
-  }
+      setStatus(status: $status) {
+        isAvailable,
+        endTime,
+        resetToken
+      }
 }
+`
+
+export const RESET_STATUS = gql`
+   mutation resetStatus {
+     resetStatus {
+       isAvailable,
+       endTime
+     }
+   }
 `

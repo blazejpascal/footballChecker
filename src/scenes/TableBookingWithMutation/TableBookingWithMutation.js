@@ -17,7 +17,10 @@ class TableBooking extends React.Component {
                 endTime: endTimeCounter
                 }
             },
+
             update: (cache, mutationResults) => {
+                const token = mutationResults.data.setStatus.resetToken
+                localStorage.setItem('jwtToken', token)
                 cache.writeQuery({
                     query: DEFAULT_QUERY,
                     data: { status: mutationResults.data.setStatus}

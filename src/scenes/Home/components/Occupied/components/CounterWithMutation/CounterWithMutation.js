@@ -6,7 +6,6 @@ import { upgradeStatus} from "../../../../../../consts/mutations";
 
 import './CounterWithMutation.less'
 
-
 class Countdown extends React.Component {
     constructor(props) {
         super(props);
@@ -32,7 +31,6 @@ class Countdown extends React.Component {
     calculateCountdown(endDate) {
         let diff = (Date.parse(new Date(endDate)) - Date.parse(new Date())) / 1000;
 
-        // clear countdown when date is reached
         if (diff <= 0) {
             this.props.mutate({
                 update: (cache, mutationResults) => {
@@ -52,7 +50,6 @@ class Countdown extends React.Component {
             millisec: 0,
         };
 
-        // calculate time difference between now and expected date
         if (diff >= 3600) { // 60 * 60
             timeLeft.hours = Math.floor(diff / 3600);
             diff -= timeLeft.hours * 3600;
@@ -106,5 +103,4 @@ Countdown.defaultProps = {
 };
 
 const CounterWithMutation = graphql(upgradeStatus)(Countdown)
-
 export default CounterWithMutation;
